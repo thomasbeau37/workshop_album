@@ -12,6 +12,6 @@ ___
 
 ## Support de cours
 
-* [Wiki](https://github.com/m2i-cyril/WebGL/wiki)
+* [Wiki](https://github.com/seeren-training/WebGL/wiki)
 
 ___
