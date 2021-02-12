@@ -27,25 +27,25 @@ Pour définir les Shaders nous devrons charger leur sources écrite en GLES.
 
 ### 🏷️ **Syntaxe**
 
-* 🔗 [OpenGL-ES-Reference-card](https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf)
+[OpenGL-ES-Reference-card](https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf)
 
-* 🔗 [GLSL-ES-Specification](https://www.khronos.org/registry/OpenGL/specs/es/2.0/GLSL_ES_Specification_1.00.pdf)
+[GLSL-ES-Specification](https://www.khronos.org/registry/OpenGL/specs/es/2.0/GLSL_ES_Specification_1.00.pdf)
 
 Nous pouvons nous appuyer sur un résumé syntaxique de l'API OpenGL ES 2.0. Les types disponibles sont les suivants:
 
 |Nom|Description|
 |-|-|
-float|Represents a floating point number
-vec2 / vec3 / vec4|Represents a whole numberent float vectors
-int|Represents integer
-ivec2 / ivec3 / ivec4|Represents vectors of int
-bool|Represents boolean
-bvec2 / bvec3 / bvec4|Represents vectors of boolean
-mat2 / mat3 / mat4|Represents matriof float
-void|Represents void
-sampler1D / sampler2D / sampler3D|Represents a texture
-samplerCube|Represents a cube texture
-sampler1DShadow / sampler2DShadow|Represents deep texture for shadow
+|float|Represents a floating point number|
+|vec2 / vec3 / vec4|Represents a whole numberent float vectors|
+|int|Represents integer|
+|ivec2 / ivec3 / ivec4|Represents vectors of int|
+|bool|Represents boolean|
+|bvec2 / bvec3 / bvec4|Represents vectors of boolean|
+|mat2 / mat3 / mat4|Represents matriof float|
+|void|Represents void|
+|sampler1D / sampler2D / sampler3D|Represents a texture|
+|samplerCube|Represents a cube texture|
+|sampler1DShadow / sampler2DShadow|Represents deep texture for shadow|
 
 ___
 
@@ -68,31 +68,31 @@ void main() {
 
 |Nom|Description|
 |-|-|
-vec4 gl_Position|Vertex shader writes to this variable to pass on the new value for the current vertex
-float gl_PointSize|Vertex shader writes to this variable to pass on the new value for the current point sizein pixels
-vec4 gl_ClipVertex|Must be filled by the position of the vertex, in order to perform the cutting operations
+|vec4 gl_Position|Vertex shader writes to this variable to pass on the new value for the current vertex|
+|float gl_PointSize|Vertex shader writes to this variable to pass on the new value for the current point sizein pixels|
+|vec4 gl_ClipVertex|Must be filled by the position of the vertex, in order to perform the cutting operations|
 
 #### Attribute
 
 |Nom|Description|
 |-|-|
-vec4 gl_Vertex|Position of the vertex
-vec4 gl_Normal|Normal vertex
-vec4 gl_Color|Color vertex
-vec4 gl_SecondaryColour|Secondary color vertex
-vec4 gl_MultiTexCoord0|Texture coordinates 0
-float gl_FogCoord|Fog coordinates
+|vec4 gl_Vertex|Position of the vertex|
+|vec4 gl_Normal|Normal vertex|
+|vec4 gl_Color|Color vertex|
+|vec4 gl_SecondaryColour|Secondary color vertex|
+|vec4 gl_MultiTexCoord0|Texture coordinates 0|
+|float gl_FogCoord|Fog coordinates|
 
 #### Varying
 
 |Nom|Description|
 |-|-|
-vec4 gl_FrontColor|Front face color
-vec4 gl_BackColor|Back face color
-vec4 gl_FrontSecondaryColor|Secondary front face color
-vec4 gl_BackSecondaryColor|Secondary back face color
-vec4 gl_TexCoord|Texture coordinates
-float gl_FogFragCoord|Fog coordinates
+|vec4 gl_FrontColor|Front face color|
+|vec4 gl_BackColor|Back face color|
+|vec4 gl_FrontSecondaryColor|Secondary front face color|
+|vec4 gl_BackSecondaryColor|Secondary back face color|
+|vec4 gl_TexCoord|Texture coordinates|
+|float gl_FogFragCoord|Fog coordinates|
 
 ___
 
@@ -114,28 +114,28 @@ void main() {
 
 |Name|Description|
 |-|-|
-vec4 gl_FragCoord|Read-only current fragment window relative coordinate. z is 0-1 and assigned to gl_FragDepth if no other value is assigned
-bool gl_FrontFacing|true if the fragment belongs to a front facing geometric primitive
-int gl_PointCoord|Fragment position within a point (point rasterization only)in the range 0.0 to 1.0
+|vec4 gl_FragCoord|Read-only current fragment window relative coordinate. z is 0-1 and assigned to gl_FragDepth if no other value is assigned|
+|bool gl_FrontFacing|true if the fragment belongs to a front facing geometric primitive|
+i|nt gl_PointCoord|Fragment position within a point (point rasterization only)in the range 0.0 to 1.0|
 
 #### Output
 
 |Name|Description|
 |-|-|
-vec4 gl_FragColor|The colour of the fragmentand assigned to gl_FragDepth if no other value is assigned
-vec4 gl_FragData|Data associated with the fragment
+|vec4 gl_FragColor|The colour of the fragmentand assigned to gl_FragDepth if no other value is assigned|
+|vec4 gl_FragData|Data associated with the fragment|
 
 #### Constant
 
 |Name|Description|
 |-|-|
-int gl_MaxVertexAttribs|Maxiumum number of vertex attributes
-int gl_MaxVertexUniformVectors|Maxiumum number of vertex shader uniform vectors
-int gl_MaxVaryingVectors|Maxiumum number of varying vectors
-int gl_MaxVertexTextureImageUnits|Maxiumum number of vertex shader texture image units
-int gl_MaxCombinedTextureImageUnits|Maxiumum number of combined texture image units
-int gl_MaxFragmentUniformVectors|Maxiumum number of fragment shader uniform vectors
-int gl_MaxDrawBuffers|Maxiumun number of draw buffers
+|int gl_MaxVertexAttribs|Maxiumum number of vertex attributes|
+|int gl_MaxVertexUniformVectors|Maxiumum number of vertex shader uniform vectors|
+|int gl_MaxVaryingVectors|Maxiumum number of varying vectors|
+|int gl_MaxVertexTextureImageUnits|Maxiumum number of vertex shader texture image units|
+|int gl_MaxCombinedTextureImageUnits|Maxiumum number of combined texture image units|
+|int gl_MaxFragmentUniformVectors|Maxiumum number of fragment shader uniform vectors|
+|int gl_MaxDrawBuffers|Maxiumun number of draw buffers|
 
 ___
 
@@ -155,7 +155,7 @@ Pour utiliser les sharders nous devons:
 
 Pour les charger plusieurs stratégie, vous pouvez stocker vos shaders dans votre document, dans un fichier, dans une fonction, n'importe. Actuellement vous êtes dans un projet possédant WebPack et un raw-loader. Nous pouvons alors simplement utiliser l'`import`.
 
-*scenes/shaders/vertex.shader.glsl*
+* scenes/shaders/vertex.shader.glsl
 
 ```glsl
 void main() {
@@ -164,7 +164,7 @@ void main() {
 }
 ```
 
-*scenes/shaders/fragment.shader.glsl*
+* scenes/shaders/fragment.shader.glsl
 
 ```glsl
 void main() {
@@ -172,7 +172,7 @@ void main() {
 }
 ```
 
-*scenes/iid.scene.js*
+* scenes/iid.scene.js
 
 ```js
 import vertex from './shaders/vertex.shader.glsl';
@@ -181,9 +181,9 @@ import fragment from './shaders/fragment.shader.glsl';
 
 ### 🏷️ **Les créer**
 
-* 🔗 [createShader](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/createShader)
-
 La méthode `WebGLRenderingContext`.createShader() de l'API WebGL crée un WebGLShader.
+
+[createShader](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/createShader)
 
 ```js
 const vertexShader = context.createShader(context.VERTEX_SHADER);
@@ -192,9 +192,9 @@ const fragmentShader = context.createShader(context.FRAGMENT_SHADER);
 
 ### 🏷️ **Spécifier la source**
 
-* 🔗 [shaderSource](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/shaderSource)
-
 La méthode `WebGLRenderingContext`.shaderSource() de l'API WebGL définit le code source d'un WebGLShader.
+
+[shaderSource](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/shaderSource)
 
 ```js
 context.shaderSource(vertexShader, vertex);
@@ -203,18 +203,18 @@ context.shaderSource(fragmentShader, fragment);
 
 ### 🏷️ **Les compiler**
 
-* 🔗 [compileShader](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/compileShader)
-
 La méthode `WebGLRenderingContext`.compileShader() de l'API WebGL compile un shader GLSL en données binaires, de sorte qu'il puisse être utilisé par un WebGLProgram.
+
+[compileShader](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/compileShader)
 
 ```js
 context.compileShader(vertexShader);
 context.compileShader(fragmentShader);
 ```
 
-* 🔗 [getShaderParameter](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/getShaderParameter)
-
 La méthode `WebGLRenderingContext`.getShaderParameter() de l'API WebGL retourne des informations sur le shader donné.
+
+[getShaderParameter](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/getShaderParameter)
 
 ```js
 if (!context.getShaderParameter(shader, context.COMPILE_STATUS)) {
@@ -225,9 +225,9 @@ if (!context.getShaderParameter(shader, context.COMPILE_STATUS)) {
 
 ### 🏷️ **Créer un programme**
 
-* 🔗 [WebGLProgram](https://developer.mozilla.org/fr/docs/Web/API/WebGLProgram)
-
 Le WebGLProgram fait partie de l'API WebGL et il est une combinaison de deux WebGLShader compilés constitués d'un shader de sommet et d'un shader de fragment (tous deux écrits en GLSL). Ces dernier sont ensuite liés dans un programme utilisable.
+
+[WebGLProgram](https://developer.mozilla.org/fr/docs/Web/API/WebGLProgram)
 
 ```js
 const program = context.createProgram();
@@ -235,9 +235,9 @@ const program = context.createProgram();
 
 ### 🏷️ **Lui attacher les shaders**
 
-* 🔗 [attachShader](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/attachShader)
-
 La méthode `WebGLRenderingContext`.attachShader() de l'API WebGL attache un WebGLShader de fragment ou de sommet à un WebGLProgram.
+
+[attachShader](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/attachShader)
 
 ```js
 context.attachShader(program, vertexShader);
@@ -246,17 +246,17 @@ context.attachShader(program, fragmentShader);
 
 ### 🏷️ **Lier le programme au contexte**
 
-* 🔗 [linkProgram](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/linkProgram)
-
 La méthode `WebGLRenderingContext`.linkProgram() relie un WebGLProgram donné, terminant le processus de préparation du code GPU pour le fragment du programme et les vertex shaders.
+
+[linkProgram](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/linkProgram)
 
 ```js
 context.linkProgram(program);
 ```
 
-* 🔗 [useProgram](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/useProgram)
-
 La méthode WebGLRenderingContext.useProgram() de l'API WebGL définit le WebGLProgram spécifié comme faisant partie de l'état de rendu en cours.
+
+[useProgram](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/useProgram)
 
 ```js
 context.useProgram(program);

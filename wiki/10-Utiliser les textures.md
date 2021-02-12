@@ -8,7 +8,7 @@ ___
 
 ## 📑 Charger
 
-* 🔗 [TextureLoader](https://threejs.org/docs/#api/en/loaders/TextureLoader)
+[TextureLoader](https://threejs.org/docs/#api/en/loaders/TextureLoader)
 
 Pour charger des textures il faut utiliser le loader adapté.
 Pour les ressources images, le TextureLoader doit être utilisé.
@@ -46,7 +46,7 @@ ___
 
 ## 📑 Mapper
 
-* 🔗 [Textures](https://threejs.org/docs/#api/en/constants/Textures)
+[Textures](https://threejs.org/docs/#api/en/constants/Textures)
 
 Pour appliquer une texture il faut utiliser l'attribut adapté ou utiliser des options à la construction.
 

@@ -108,7 +108,7 @@ context.bindBuffer(context.ELEMENT_ARRAY_BUFFER, context.createBuffer());
 context.bufferData(context.ELEMENT_ARRAY_BUFFER, new Uint16Array(vertices.keys()), context.STATIC_DRAW);
 ```
 
-* 🔗 [drawElements](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawElements)
+[drawElements](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawElements)
 
 La méthode `WebGLRenderingContext`.drawElements () de l'API WebGL restitue les primitives à partir des données du tableau.
 

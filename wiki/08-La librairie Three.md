@@ -21,7 +21,7 @@ ___
 
 ## 📑 WebGLRenderer
 
-* 🔗 [WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer)
+[WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer)
 
 A la construction les options peuvent être spécifiées.
 
@@ -53,11 +53,11 @@ ___
 
 ## 📑 Camera
 
-* 🔗 [PerspectiveCamera](https://threejs.org/docs/#api/en/cameras/PerspectiveCamera)
+[PerspectiveCamera](https://threejs.org/docs/#api/en/cameras/PerspectiveCamera)
 
 Le `constructeur` de caméra correspond au prototype de la méthode `perspective` de `mat4`.
 
-La position se définie avec `position.set`. **L'ensemble des objets 3D possède `position` et `rotation` en propriété.**
+La position se définie avec `position.set`. L'ensemble des objets 3D possède `position` et `rotation` en propriété.
 
 ```js
 camera.position.set(5, 1, 5);
@@ -78,7 +78,7 @@ ___
 
 ## 📑 Scene
 
-* 🔗 [Creating-a-scene](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
+[Creating-a-scene](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
 La scène possède une méthode pour ajouter des `meshs` qui représentent vertex et fragment.
 
@@ -96,38 +96,33 @@ ___
 
 ## 📑 Mesh
 
-* 🔗 [Mesh](https://threejs.org/docs/#api/en/objects/Mesh)
+[Mesh](https://threejs.org/docs/#api/en/objects/Mesh)
 
 Une mesh a besoin à la construction d'une géométrie et d'un matériel.
 
 ```js
-
 var mesh = new Mesh(
     new BoxGeometry( 1, 1, 1 ),
     new MeshBasicMaterial({ color: 0xffff00})
 );
-
 ```
 
 ### 🏷️ **Geometry**
 
-* 🔗 [Geometry](https://threejs.org/docs/#api/en/core/Geometry)
+[Geometry](https://threejs.org/docs/#api/en/core/Geometry)
 
 De nombreuses géométries sont disponibles, il est possible de les construire point par point ou de les importer depuis un logiciel de modélisation.
 
 ### 🏷️ **Materiaux**
 
-* `MeshBasicMaterial`: sans ombre
-* `MeshBasicMaterial`: sans ombre
-* `MeshLambertMaterial`: accepte l'ombre
-* `MeshPhongMaterial`: spéculaire plus prononcée
-* `MeshStandardMaterial`: plus précis
+* MeshBasicMaterial: sans ombre
+* MeshBasicMaterial: sans ombre
+* MeshLambertMaterial: accepte l'ombre
+* MeshPhongMaterial: spéculaire plus prononcée
+* MeshStandardMaterial: plus précis
 
 ___
 
 👨🏻‍💻 Manipulation
 
 Ajoutez un cube et un plan à notre scène.
-
-___
-

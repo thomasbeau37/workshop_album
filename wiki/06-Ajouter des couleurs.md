@@ -17,11 +17,11 @@ ___
 
 Variables globales qui peuvent changer par primitive qui sont transmises de l'application OpenGL aux shaders. Ce qualificatif peut être utilisé dans les shaders de vertex et de fragment.
 
-* 🔗 [getUniformLocation](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/getUniformLocation)
+[getUniformLocation](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/getUniformLocation)
 
 Faisant partie de l'API WebGL, la méthode `WebGLRenderingContext`.getUniformLocation() retourne l'emplacement d'une variable uniform particulière appartenant au WebGLProgram indiqué.
 
-* 🔗 [uniform[1234][fi][v]](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/uniform)
+[uniform[1234][fi][v]](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/uniform)
 
 Les méthodes `WebGLRenderingContext`.uniform[1234][fi][v]() de l'API WebGL indiquent les valeurs des variables uniform.
 
@@ -49,7 +49,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-* Utilisez `dat.gui` pour pouvoir choisir la couleur d'un objet 2D.
+Utilisez `dat.gui` pour pouvoir choisir la couleur d'un objet 2D.
 
 ___
 
@@ -84,6 +84,4 @@ ___
 
 👨🏻‍💻 Manipulation
 
-* Associez une couleur en utilisant `dat.gui` afin d'affecter la couleur en cours de sélection via un tableau des couleurs à une vertice.
-* Utilisez un tampon pour écrire les valeurs de chaque couleur sur l'attribut concerné.
-* Effectuer un refactoring sur ce qui représente votre objet.
+Associez une couleur en utilisant `dat.gui` afin d'affecter la couleur en cours de sélection via un tableau des couleurs à une vertice puis utilisez un tampon pour écrire les valeurs de chaque couleur sur l'attribut concerné.

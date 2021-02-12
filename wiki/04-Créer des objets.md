@@ -16,7 +16,7 @@ Après avoir créer un contexte, initialiser les shaders et obtenu une scène, n
 
 ### 🏷️ **Draw**
 
-* 🔗 [drawArrays](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/drawArrays)
+[drawArrays](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/drawArrays)
 
 ```js
 context.drawArrays(context.POINTS, 0, 1);
@@ -52,11 +52,11 @@ Il est possible de passer des valeurs et de dynamiser vos shaders en obtenant la
 
 Variables globales susceptibles de changer par sommet, transmises de l'application OpenGL aux vertex shaders.
 
-* 🔗 [getAttribLocation](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/getAttribLocation)
+[getAttribLocation](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/getAttribLocation)
 
 La méthode `WebGLRenderingContext`.getAttribLocation() de l'API WebGL retourne l'emplacement d'une variable d'attribut dans le WebGLProgram indiqué.
 
-* 🔗 [vertexAttrib[1234]f[v]](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+[vertexAttrib[1234]f[v]](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/vertexAttrib)
 
 Les méthodes `WebGLRenderingContext`.vertexAttrib`[1234]`f`[v]`() de l'API WebGL spécifient des valeurs constantes pour les attributs de sommet génériques.
 
@@ -88,7 +88,7 @@ Pour pouvoir répéter notre vertex programmatiquement et faire varier leur vale
 
 ### 🏷️ **Mise en tampon**
 
-* 🔗 [Float32Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Float32Array)
+[Float32Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Float32Array)
 
 Le tableau typé Float32Array représente un tableau de nombres flottants représentés sur 32 bits. Il sera utilisé pour spécifier les points de la géométrie.
 
@@ -100,7 +100,7 @@ const vertices = new Float32Array([
 ]);
 ```
 
-* 🔗 [createBuffer](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/createBuffer)
+[createBuffer](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/createBuffer)
 
 La méthode `WebGLRenderingContext`.createBuffer() de l'API WebGL crée et initialise un WebGLBuffer stockant des données telles que des sommets ou des couleurs.
 
@@ -108,7 +108,7 @@ La méthode `WebGLRenderingContext`.createBuffer() de l'API WebGL crée et initi
 const buffer = context.createBuffer();
 ```
 
-* 🔗 [bindBuffer](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/bindBuffer)
+[bindBuffer](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/bindBuffer)
 
 La méthode `WebGLRenderingContext`.bindBuffer() de l'API WebGL lie un WebGLBuffer donné à une cible.
 
@@ -116,7 +116,7 @@ La méthode `WebGLRenderingContext`.bindBuffer() de l'API WebGL lie un WebGLBuff
 context.bindBuffer(context.ARRAY_BUFFER, buffer);
 ```
 
-* 🔗 [bufferData](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/bufferData)
+[bufferData](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/bufferData)
 
 La méthode `WebGLRenderingContext`.bufferData() de l'API WebGL initialise et crée le magasin de données de l'objet tampon.
 
@@ -132,7 +132,7 @@ context.bufferData(
 
 Une fois le tampon rattaché à des données, nous devons disposer ces données sur nos attributs de vertex.
 
-* 🔗 [enableVertexAttribArray](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/enableVertexAttribArray)
+[enableVertexAttribArray](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/enableVertexAttribArray)
 
 La méthode `WebGLRenderingContext`.enableVertexAttribArray() active le tableau générique des attributs de sommet à l'indice spécifié dans la liste des tableaux d'attributs.
 
@@ -140,7 +140,7 @@ La méthode `WebGLRenderingContext`.enableVertexAttribArray() active le tableau 
 context.enableVertexAttribArray(a_position);
 ```
 
-* 🔗 [vertexAttribPointer](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/vertexAttribPointer)
+[vertexAttribPointer](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/vertexAttribPointer)
 
 La méthode `WebGLRenderingContext`.vertexAttribPointer() de l'API WebGL spécifie la disposition en mémoire de l'objet de tampon vertex. Elle doit être appelée une fois pour chaque attribut de sommet.
 
@@ -151,15 +151,9 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Créez une forme 2D en spécifiant au click ses vertices.
-
-
-Utilisez le helper `dat.gui` qui est déjà présent dans notre package.json pour:
+Créez une forme 2D en spécifiant au click ses vertices. Utilisez le helper `dat.gui` pour effacer votre forme et choisir le mode de dessin
 
 🔗 [dat.gui.js](https://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage)
-
-* Effacer votre forme
-* Choisir le mode de dessin
 
 ___
 
@@ -199,7 +193,7 @@ void main() {
 }
 ```
 
-* 🔗 [uniformMatrix](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+[uniformMatrix](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext/uniformMatrix)
 
 Les méthodes `WebGLRenderingContext`.uniformMatrix[234]fv() de l'API WebGL définissent des valeurs matricielles pour les variables uniform.
 
@@ -214,7 +208,7 @@ ___
 
 ## 📑 Librairie
 
-* 🔗 [GlMatrix](http://glmatrix.net/)
+[GlMatrix](http://glmatrix.net/)
 
 La librairie est déjà présente dans notre package.json.
 
@@ -260,4 +254,4 @@ Utiliser dat.GUI pour effectuer des rotations sur la forme dessinée sur les 3 a
 
 ___
 
-Après avoir observé la transmission de valeur entre JavaScript et GLES, la création et utilisation d'un tampon pour dessiner et avoir effectuer des opérations matricielles, nous passons à l'animation des objets pour ne pas avoir à faire de rendu manuel.
+> Après avoir observé la transmission de valeur entre JavaScript et GLES, la création et utilisation d'un tampon pour dessiner et avoir effectuer des opérations matricielles, nous passons à l'animation des objets pour ne pas avoir à faire de rendu manuel.

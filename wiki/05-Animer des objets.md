@@ -15,7 +15,7 @@ ___
 
 ## 📑 RequestAnimationFrame
 
-* 🔗 [requestAnimationFrame](https://developer.mozilla.org/fr/docs/Web/API/Window/requestAnimationFrame)
+[requestAnimationFrame](https://developer.mozilla.org/fr/docs/Web/API/Window/requestAnimationFrame)
 
 La méthode `window`.requestAnimationFrame() notifie le navigateur que vous souhaitez exécuter une animation et demande que celui-ci exécute une fonction spécifique de mise à jour de l'animation, avant le prochain rafraîchissement du navigateur
 
@@ -52,11 +52,9 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Utilisez `dat.gui` pour pouvoir paramétrer:
-* Le nombre de frame par seconde
-* Une vitesse de rotation en x, y et z
-* Créer une **nouvelle forme indépendante** d'une première dessinée
+Utilisez `dat.gui` pour pouvoir paramétrer le nombre de frame par seconde, une vitesse de rotation en x, y et z et créer une nouvelle forme indépendante d'une première dessinée
+
 ___
 
 
-Après avoir observé la boucle de rendu nous allons observer comment faire varier les couleurs pour chaque vertex.
+> Après avoir observé la boucle de rendu nous allons observer comment faire varier les couleurs pour chaque vertex.

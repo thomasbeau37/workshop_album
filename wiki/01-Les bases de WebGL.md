@@ -9,9 +9,9 @@ ___
 
 ## 📑 OpenGL
 
-🔗 [OpenGL](https://fr.wikipedia.org/wiki/OpenGL)
-
 OpenGL est un ensemble normalisé de fonctions de calcul d'images 2D ou 3D lancé par Silicon Graphics en 1992. Cette interface de programmation est disponible sur de nombreuses plateformes où elle est utilisée pour des applications qui vont du jeu vidéo jusqu'à la CAO en passant par la modélisation. 
+
+[OpenGL](https://fr.wikipedia.org/wiki/OpenGL)
 
 > Les `vertex` permettent de créer une `geometry` qui se colore avec un `fragment`.
 
@@ -19,17 +19,17 @@ OpenGL est un ensemble normalisé de fonctions de calcul d'images 2D ou 3D lanc�
 
 ### 🏷️ **OpenGL-ES**
 
-🔗 [OpenGL-ES](https://fr.wikipedia.org/wiki/OpenGL_ES)
-
 OpenGL ES (Open Graphics Library for Embedded System, parfois abrégé en OGLES ou GLES) est une spécification du Khronos Group qui définit une API multiplate-forme pour la conception d'applications générant des images 3D dérivée de la spécification OpenGL, sous une forme adaptée aux plateformes mobiles ou embarquées telles que les téléphones mobiles, les assistants personnels (PDA), les consoles de jeux vidéo portables, les lecteurs multimédia de poche ou de salon... 
+
+[OpenGL-ES](https://fr.wikipedia.org/wiki/OpenGL_ES)
 
 > La version 2.0 de `OpenGL-ES` est utilisée par la technologie `WEB-GL`.
 
 ### 🏷️ **OpenGL-SL**
 
-🔗 [OpenGL-SL](https://www.khronos.org/registry/OpenGL/specs/gl/GLSLangSpec.4.60.pdf)
-
 L’OpenGL Shading Language (GLSL) est un langage de programmation de shaders. Ces derniers permettent un contrôle avancé du pipeline de la carte graphique. Le GLSL a été développé par l’OpenGL Architecture Review Board afin de faciliter la programmation de shaders avec l'API OpenGL. 
+
+[OpenGL-SL](https://www.khronos.org/registry/OpenGL/specs/gl/GLSLangSpec.4.60.pdf)
 
 > `WEB-GL` utilise le `OpenGL Shading Language` basé sur` OpenGL-ES 2.0` pour nous proposer une syntaxe sans géométrie.
 
@@ -71,9 +71,11 @@ De nombreuse librairies ou frameworks existent pour accélérer le développemen
 
 Chacun possède son orientation d'application.
 
-* 🔗 [Phaser](https://phaser.io/): orienté jeux complets.
-* 🔗 [BabylonJS](https://www.babylonjs.com/): cadre complet orienté jeux.
-* 🔗 [Three](https://threejs.org/): orienté librairies, helper.
+[Phaser](https://phaser.io/)
+
+[BabylonJS](https://www.babylonjs.com/)
+
+[Three](https://threejs.org/)
 
 ___
 
@@ -81,13 +83,13 @@ ___
 
 ### 🏷️ **WebGL Up and Running**
 
-* 🔗 [PDF](https://github.com/suyuanhxx/GraduationProject/blob/master/WebGL-%20Up%20and%20Running.pdf)
+[PDF](https://github.com/suyuanhxx/GraduationProject/blob/master/WebGL-%20Up%20and%20Running.pdf)
 
 Cet ouvrage prend le partie de ne pas d'utiliser dès le premier code une librairies externe.
 
 ### 🏷️ **WebGL Programming Guide**
 
-* 🔗 [PDF](https://www.pdfdrive.com/webgl-programming-guide-e34507611.html)
+[PDF](https://www.pdfdrive.com/webgl-programming-guide-e34507611.html)
 
 Cet ouvrage prend le partie de ne pas utiliser de librairies.
 
