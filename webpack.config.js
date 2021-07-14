@@ -1,62 +1,53 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const bundleName = 'webgl';
 
 module.exports = {
-    entry: [
-        './src/index.js',
-        './src/index.scss',
-    ],
-    output: {
-        path: `${__dirname}/dist`,
-        filename: 'index.js',
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-            },
-            {
-                test: /\.glsl$/,
-                exclude: /node_modules/,
-                use: 'raw-loader',
-            },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
-                ],
-            },
-            {
-                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]',
-                },
-            },
+  entry: [
+    './src/app.js',
+    './src/app.scss',
+  ],
+  output: {
+    filename: `${bundleName}.js`,
+    path: `${__dirname}/dist`,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+            process.env.NODE_ENV !== "production" ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader',
         ],
-    },
-    watchOptions: {
-        ignored: [
-            /node_modules/,
-        ],
-    },
-    plugins: [
-        new MiniCssExtractPlugin({ filename: 'index.css' }),
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: 3000,
-            files: ['./index.html'],
-            server: {
-                baseDir: './',
-                middleware: (req, res, next) => (-1 === req.url.indexOf('.') && '/' !== req.url
-                    ? res.end(res.writeHead(302, { Location: '/' }))
-                    : next()),
-            },
-        }),
+      },
+      {
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'file-loader',
+        
+      },
+      {
+          test: /\.glsl$/,
+          exclude: /node_modules/,
+          use: 'raw-loader',
+      },
     ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+        template: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: `${bundleName}.css`
+    })
+  ],
+  devServer: {
+    contentBase: './',
+  },
 };
