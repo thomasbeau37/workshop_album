@@ -37,10 +37,26 @@ export class ThreeScene extends Scene{
         }*/
 
         document.getElementById("right").addEventListener("click", function() {
-            camera.rotation.y += Math.PI / 2;
+            const initPos = camera.rotation.y;
+            const rotate_right = () => {
+                camera.rotation.y -= 0.1;
+                if(camera.rotation.y < initPos-(Math.PI / 2)){
+                    loopEvent.remove(rotate_right);
+                    camera.rotation.y =  initPos-(Math.PI / 2);
+                }
+            }
+            loopEvent.add(rotate_right);
         }); 
         document.getElementById("left").addEventListener("click", function() {
-            camera.rotation.y -= Math.PI / 2;
+            const initPos = camera.rotation.y;
+            const rotate_left = () => {
+                camera.rotation.y += 0.1;
+                if(camera.rotation.y > initPos+(Math.PI / 2)){
+                    loopEvent.remove(rotate_left);
+                    camera.rotation.y =  initPos+(Math.PI / 2);
+                }
+            }
+            loopEvent.add(rotate_left);
         }); 
 
         this.initCamera(camera, domElement);
@@ -213,12 +229,8 @@ export class ThreeScene extends Scene{
         });
     }
 
-    rotateCamera(camera, loopEvent){
-        
-    }
-
     initCameraAnimation(camera, loopEvent){
-        const rotate_right = () => camera.rotation.y -= 0.01;
+        const rotate_right = () => camera.rotation.y -= 0.02;
         const animation = Gui.instance.addFolder("Camera");
         animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
             if(data == true){
