@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Gui } from "../gui/gui";
 import { LightGui } from "../gui/light.gui ";
 import { MatrixGui } from "../gui/matrix.gui";
+import * as THREE from 'three';
 
 export class ThreeScene extends Scene{
 
@@ -11,8 +12,20 @@ export class ThreeScene extends Scene{
 
     #propeller;
 
+    #rotating = false;
+
     constructor(camera, domElement, loopEvent){
         super();
+        const loader2 = new THREE.CubeTextureLoader();
+        const texture = loader2.load([
+            'assets/textures/nx.png',
+            'assets/textures/px.png',
+            'assets/textures/py.png',
+            'assets/textures/ny.png',
+            'assets/textures/nz.png',
+            'assets/textures/pz.png',
+        ]);
+        this.background = texture;
 
         //this.background = new Color(0xff0000); //background color
         //this.fog = new Fog(0xffffff, 1 , 20);
@@ -22,6 +35,13 @@ export class ThreeScene extends Scene{
         /*document.body.onclick () => {
 
         }*/
+
+        document.getElementById("right").addEventListener("click", function() {
+            camera.rotation.y += Math.PI / 2;
+        }); 
+        document.getElementById("left").addEventListener("click", function() {
+            camera.rotation.y -= Math.PI / 2;
+        }); 
 
         this.initCamera(camera, domElement);
         this.initCameraAnimation(camera, loopEvent);
@@ -81,17 +101,6 @@ export class ThreeScene extends Scene{
                 loopEvent.remove(rotate);
             }
         });
-        const animation_rotate = Gui.instance.addFolder("Object Animation");
-        const rotate2 = () => {
-            this.#scene.rotateY(0.1);           
-        }
-        animation_rotate.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
-            if(data == true){
-                loopEvent.add(rotate2);
-            }else{
-                loopEvent.remove(rotate2);
-            }
-        });
     }
 
     initMesh(loopEvent){
@@ -107,7 +116,30 @@ export class ThreeScene extends Scene{
         const box = new Mesh(
             new BoxGeometry(1, 1, 1),
             new MeshLambertMaterial({ color:0xFF0000, wireframe: true}), //wireframe = fillaire
-             
+        );
+
+        const box2 = new Mesh(
+            new BoxGeometry(1, 1, 0.1),
+            /*[
+                'assets/textures/cube_back.png', 
+                'assets/textures/cube_bottom.png', 
+                'assets/textures/cube_top.png', 
+                'assets/textures/cube_right.png', 
+                'assets/textures/cube_left.png', 
+                'assets/textures/cube_front.png', 
+            ].map(image => new MeshLambertMaterial({
+                map: loader.load(image)
+            })),*/
+            new MeshLambertMaterial({ color:0x00FF00}),  
+        );
+
+        const box3 = new Mesh(
+            new BoxGeometry(1, 1, 1),
+            new MeshLambertMaterial({ color:0x00FF00}),
+        );
+        const box4 = new Mesh(
+            new BoxGeometry(1, 1, 1),
+            new MeshLambertMaterial({ color:0x0000FF}),
         );
 
         //si une couleur par face faire une tableau de material
@@ -121,8 +153,15 @@ export class ThreeScene extends Scene{
             new MeshLambertMaterial({ color:0xFF0000})
         ]*/
 
-        box.position.y += 0.5;
-        box.position.x -= 4;
+        box.position.z = 5;
+        box.position.x = 0;
+
+        box2.position.z = -5;
+
+        box3.position.x = 5;
+
+        box4.position.x = -5;
+
         const loader = new TextureLoader();
         const texture = loader.load("assets/textures/checkerboard.jpg");
         texture.wrapS = RepeatWrapping;
@@ -141,9 +180,12 @@ export class ThreeScene extends Scene{
 
         //new MatrixGui(box, "cube");
 
-/*        this.add(floor);
+        this.add(floor);
         this.add(box);
-        this.initBoxAnimation(box, loopEvent);*/
+        this.add(box2);
+        this.add(box3);
+        this.add(box4);
+        this.initBoxAnimation(box2, loopEvent);
     }
 
     initLight(){
@@ -160,7 +202,7 @@ export class ThreeScene extends Scene{
     }
 
     initBoxAnimation(box, loopEvent){
-        const rotate = () => box.rotation.x += 0.1;
+        const rotate = () => box.rotation.y += 0.05;
         const animation = Gui.instance.addFolder("Animation");
         animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
             if(data == true){
@@ -169,6 +211,10 @@ export class ThreeScene extends Scene{
                 loopEvent.remove(rotate);
             }
         });
+    }
+
+    rotateCamera(camera, loopEvent){
+        
     }
 
     initCameraAnimation(camera, loopEvent){
@@ -192,9 +238,9 @@ export class ThreeScene extends Scene{
     }
 
     initCamera(camera, domElement){
-        const control = new OrbitControls(camera, domElement);
-        camera.position.z = 10;
-        camera.position.y = 4;
+        //const control = new OrbitControls(camera, domElement);
+        camera.position.z = 0;
+        camera.position.y = 0;
         //camera.lookAt(0,0,0);
     }
 
