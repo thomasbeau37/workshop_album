@@ -16,6 +16,7 @@ export class ThreeScene extends Scene{
 
     constructor(camera, domElement, loopEvent){
         super();
+        let arrayMusic = ['assets/sounds/son.mp3','assets/sounds/son2.mp3','assets/sounds/son3.mp3','assets/sounds/son4.mp3']
         const loader2 = new THREE.CubeTextureLoader();
         const texture = loader2.load([
             'assets/textures/nx.png',
@@ -27,6 +28,8 @@ export class ThreeScene extends Scene{
         ]);
         this.background = texture;
 
+        let initMusic =-1;
+
         //this.background = new Color(0xff0000); //background color
         //this.fog = new Fog(0xffffff, 1 , 20);
         
@@ -35,13 +38,45 @@ export class ThreeScene extends Scene{
         /*document.body.onclick () => {
 
         }*/
+        const listener = new THREE.AudioListener();
+        camera.add( listener );
+
+// create a global audio source
+        const sound = new THREE.Audio( listener );
+
+// load a sound and set it as the Audio object's buffer
+        const audioLoader = new THREE.AudioLoader();
+
+        function playMusic(audioLoader,mp3url){
+            audioLoader.load( mp3url, function( buffer ) {
+                console.log(buffer)
+                sound.setBuffer( buffer );
+                sound.setLoop( true );
+                sound.setVolume( 0.5 );
+                if(sound.isPlaying){
+                    sound.stop()
+                }
+                sound.play();
+
+            });
+        }
+
+
 
         document.getElementById("right").addEventListener("click", function() {
             const initPos = camera.rotation.y;
+
             const rotate_right = () => {
                 camera.rotation.y -= 0.1;
                 if(camera.rotation.y < initPos-(Math.PI / 2)){
                     loopEvent.remove(rotate_right);
+                    initMusic = initMusic+1
+                    if(initMusic > 3){
+                        initMusic = 0
+                    }
+                    playMusic(audioLoader,arrayMusic[initMusic])
+
+
                     camera.rotation.y =  initPos-(Math.PI / 2);
                 }
             }

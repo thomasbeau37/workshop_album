@@ -15,7 +15,7 @@ window.onload= () => {
     const threeRenderer = new ThreeRenderer(container);
     const threeCamera = new ThreeCamera(container);
 
-    const loopEvent = new LoopEvent(30);
+    const loopEvent = new LoopEvent(60);
     const threeScene = new ThreeScene(threeCamera, threeRenderer.domElement, loopEvent);
 
     loopEvent.add(() =>threeRenderer.render(threeScene, threeCamera));

@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const bundleName = 'webgl';
 
 module.exports = {
@@ -28,10 +29,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'file-loader',
-        
+        test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+        type: "assets/textures"
       },
+
       {
           test: /\.glsl$/,
           exclude: /node_modules/,
@@ -45,9 +46,16 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: `${bundleName}.css`
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'assets' ,
+          to: "assets/"}
+      ]
     })
   ],
   devServer: {
-    contentBase: './',
+    static: './',
+
   },
 };
