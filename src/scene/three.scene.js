@@ -19,12 +19,12 @@ export class ThreeScene extends Scene{
         let arrayMusic = ['assets/sounds/son.mp3','assets/sounds/son2.mp3','assets/sounds/son3.mp3','assets/sounds/son4.mp3']
         const loader2 = new THREE.CubeTextureLoader();
         const texture = loader2.load([
-            'assets/textures/nx.png',
-            'assets/textures/px.png',
-            'assets/textures/py.png',
-            'assets/textures/ny.png',
-            'assets/textures/nz.png',
-            'assets/textures/pz.png',
+            'assets/textures/nx.jpg',
+            'assets/textures/px.jpg',
+            'assets/textures/py.jpg',
+            'assets/textures/ny.jpg',
+            'assets/textures/nz.jpg',
+            'assets/textures/pz.jpg',
         ]);
         this.background = texture;
 
