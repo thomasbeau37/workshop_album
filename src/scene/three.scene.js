@@ -65,7 +65,6 @@ export class ThreeScene extends Scene{
 
         document.getElementById("right").addEventListener("click", function() {
             const initPos = camera.rotation.y;
-
             const rotate_right = () => {
                 camera.rotation.y -= 0.1;
                 if(camera.rotation.y < initPos-(Math.PI / 2)){
@@ -101,15 +100,22 @@ export class ThreeScene extends Scene{
         
         const loader = new GLTFLoader();
         loader.load(
-            "assets/models/LowPolyMill.glb",
+            "assets/models/album.glb",
             (gltf) => {
                 this.#scene = gltf.scene;
+                console.log(this.#scene);
                 this.#propeller = this.#scene.children[5];
-                gltf.scene.position.y += 1;
+                gltf.scene.position.z = -1.2;
+                gltf.scene.position.x = 0;
+                gltf.scene.position.y = -0.15;
                 this.add(this.#scene);
                 //camera.lookAt(this.#scene.position);
                 this.initModelInteraction(loopEvent);
                 this.initModelRaycaster(loopEvent, domElement, camera);
+                const rotate = () => {
+                    gltf.scene.rotation.y += 0.05;
+                }
+                loopEvent.add(rotate);
             },
             () => {
                 console.log("Progress");
@@ -141,17 +147,17 @@ export class ThreeScene extends Scene{
     }
 
     initModelInteraction(loopEvent){
-        const animation = Gui.instance.addFolder("Hélice Animation");
+        //const animation = Gui.instance.addFolder("Hélice Animation");
         const rotate = () => {
             this.#propeller.rotateY(0.1);           
         }
-        animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
+        /*animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
             if(data == true){
                 loopEvent.add(rotate);
             }else{
                 loopEvent.remove(rotate);
             }
-        });
+        });*/
     }
 
     initMesh(loopEvent){
@@ -233,7 +239,7 @@ export class ThreeScene extends Scene{
 
         this.add(floor);
         this.add(box);
-        this.add(box2);
+        //this.add(box2);
         this.add(box3);
         this.add(box4);
         this.initBoxAnimation(box2, loopEvent);
@@ -242,46 +248,46 @@ export class ThreeScene extends Scene{
     initLight(){
         const ambiantLight = new AmbientLight(0xffffff, 0.8);
         this.add(ambiantLight);
-        new LightGui(ambiantLight, "ambiant");
+        //new LightGui(ambiantLight, "ambiant");
 
         const pointLight = new PointLight(0xffffff, 1, 10);
         const pointLightHelper = new PointLightHelper(pointLight, 0.5);
         pointLight.castShadow = true;
         pointLight.position.set(-1, 2 ,2);
         this.add(pointLight, pointLightHelper);
-        new LightGui(pointLight, "Point");
+        //new LightGui(pointLight, "Point");
     }
 
     initBoxAnimation(box, loopEvent){
         const rotate = () => box.rotation.y += 0.05;
-        const animation = Gui.instance.addFolder("Animation");
-        animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
+        //const animation = Gui.instance.addFolder("Animation");
+        /*animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
             if(data == true){
                 loopEvent.add(rotate);
             }else{
                 loopEvent.remove(rotate);
             }
-        });
+        });*/
     }
 
     initCameraAnimation(camera, loopEvent){
         const rotate_right = () => camera.rotation.y -= 0.02;
-        const animation = Gui.instance.addFolder("Camera");
-        animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
+        //const animation = Gui.instance.addFolder("Camera");
+        /*animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
             if(data == true){
                 loopEvent.add(rotate_right);
             }else{
                 loopEvent.remove(rotate_right);
             }
-        });
+        });*/
         const rotate_left = () => camera.rotation.y += 0.01;
-        animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
+        /*animation.add({rotate:false}, "rotate", 0, 1).onChange((data)=>{
             if(data == true){
                 loopEvent.add(rotate_left);
             }else{
                 loopEvent.remove(rotate_left);
             }
-        });
+        });*/
     }
 
     initCamera(camera, domElement){

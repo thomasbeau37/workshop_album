@@ -48,6 +48,6 @@ module.exports = {
     })
   ],
   devServer: {
-    static: './',
+    contentBase: './',
   },
 };

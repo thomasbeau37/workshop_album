@@ -8,6 +8,32 @@ body{
 }
 #three{
     background-color: rgb(0, 0, 0);
-    width: 70vw;
+    width: 100vw;
     height: 100vh;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.navbar-custom{
+    background-color: #00000066;
+    ;
+}
+
+.fleches{
+    position: absolute;
+    margin: 0 auto;
+    align-items: center;
+    background: radial-gradient(130.06% 68.17% at 50% 28.78%, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container1{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-size: cover;
 }
