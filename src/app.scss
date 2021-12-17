@@ -29,6 +29,7 @@ body{
 .fleches{
     position: absolute;
     margin: 0 auto;
+    align-items: center;
     background: radial-gradient(130.06% 68.17% at 50% 28.78%, rgba(0, 0, 0, 0) 0%, #000000 100%);
     top: 0;
     left: 0;
@@ -38,7 +39,8 @@ body{
 
 .mysteryText{
     position: absolute;
-    height: 65%;
+    height: 25%;
+    z-index: 5;
     width: 100%;
     //margin: 0 auto;
     align-items: center;
@@ -116,8 +118,82 @@ body{
 
 
 .container1{
-width: 100vw;
-height: 100vh;
-max-width: 100%;
-background-size: cover;
+    width: 100vw;
+    height: 300vh;
+    max-width: 100%;
+    background-size: cover;
+}
+
+.music{
+    height: 12vh;
+    background-color: #181818;
+}
+
+.music-time{
+    color: white;
+}
+
+.pack1{
+    height: 60vh;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.tracklist{
+    color: white;
+    font-size: 26px;
+    margin-top: 10px;
+}
+
+.preco{
+    margin-top: 10px;
+    width: 100%;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.preco:hover{
+    color: #BF0101;
+    border-radius: 5px;
+    background-color:rgb(248, 228, 228);
+    box-shadow: rgb(236, 139, 139) 0px 2px 15px;
+}
+
+.preco2{
+    margin-top: 10px;
+    width: 100%;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.preco2:hover{
+    color: #BFA101;
+    border-radius: 5px;
+    background-color:rgb(251, 253, 220);
+    box-shadow: rgb(221, 236, 139) 0px 2px 15px;
+}
+
+.footer{
+    height: 60vh;
+    background-size: cover;
+    color: white;
+    font-size: 20px;
+}
+
+.mail{
+    background-color: black;
+    color: white;
+    border: 1px solid #262626;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+}
+
+.mail::placeholder{
+    color: white;
+}
+
+.subscribe{
+    width: 100%;
+    padding: 8px;
 }

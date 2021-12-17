@@ -2,121 +2,307 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>WEB-GL Training</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>L.A.S</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
 </head>
 
 
 <body>
-  <nav style="box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);max-width: 100%"
-    class="navbar fixed-top navbar-expand-lg navbar-custom navbar-dark">
+<nav style="box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);max-width: 100%"
+     class="navbar fixed-top navbar-expand-lg navbar-custom navbar-dark">
     <div class="collapse navbar-collapse row" id="navbarSupportedContent">
-      <div class="col-sm-2">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a style="color:white;text-decoration: underline;text-underline-offset: 10px" class="nav-link"
-              href="#">Accueil<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a style="color:white" class="nav-link" href="#">Articles <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-sm-8">
-        <div style="margin: 0 auto;text-align:center">
-          <img src="/assets/images/las.png">
+        <div class="col-sm-2">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a style="color:white;text-decoration: underline;text-underline-offset: 10px" class="nav-link"
+                       href="#">Accueil<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a style="color:white" class="nav-link" href="#">Articles <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <div style="margin: 0 auto;text-align:center">
+                <img src="/assets/images/las.png">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <form class="form-inline my-2 my-lg-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <a href="#"><img src="/assets/images/profil.png"></a>
+                        </div>
+                        <div class="col-sm">
+                            <a href="#"><img src="/assets/images/cart.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid fixed-bottom music d-flex align-items-center">
+    <div class="row" style="width: 100%;">
+        <div class="col-sm-2">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img width=80% id="curent-album" src="./assets/images/album.jpg">
+                </div>
+                <div class="col-sm-8" style="color: white">
+                    <div class="row"><span id="current-song">Le monde est petit</span></div>
+                    <div class="row">L.A.S</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8" style="text-align:center;">
+            <div class="row d-flex align-items-center justify-content-center" style="text-align: center;">
+                <a id="previous" href="#"><img src="./assets/images/previous.png"></a>
+                <a id="button-play" href="#"><img src="./assets/images/play.png"></a>
+                <a id="next" href="#"><img src="./assets/images/next.png"></a>
+            </div>
+            <div style="margin-top: 5px;" class="row justify-content-center">
+                <div style="width: 100%;" class="row d-flex align-items-center justify-content-center">
+                    <div style="text-align: right;" class="col-sm-2">
+                        <span class="music-time" id="current"></span>
+                    </div>
+                    <div class="col-sm-8">
+                        <div style="position: relative;height: 5px;width:100%;background: #535353;border-radius: 23px;"></div>
+                        <div id="progress"
+                             style="top: 0;left: 2;position: absolute;height: 5px;width:0%;background: #e9e9e9;border-radius: 23px;"></div>
+                    </div>
+                    <div style="text-align: left;" class="col-sm-2">
+                        <span class="music-time" id="duration"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <div id="native"></div>
+    <div id="three">
+      <div class="mysteryText row w-100" ;>
+
+        <div class="col-md-5">
+        </div>
+
+        <div class="col-md-2" style="text-align: center">
+          <input class="form-control" id="inputMystere" type="text" placeholder="Rentrez le code secret...">
+          <button style="display: none" id="myBtn">Button</button>
+
+        </div>
+        <div class="col-md-2">
         </div>
       </div>
-      <div class="col-sm-2">
-        <form class="form-inline my-2 my-lg-2">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <a href="#"><img src="/assets/images/profil.png"></a>
-              </div>
-              <div class="col-sm">
-                <a href="#"><img src="/assets/images/cart.png"></a>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </nav>
-  <div>
-    <div id="native"></div>
-
-    <div id="three">
-      </div>
-
 
       <div class="fleches d-flex justify-content-center">
-        <div class="mysteryText row w-100";>
 
-          <div class="col-md-5">
-
-          </div>
-          <div class="col-md-2" style="text-align: center">
-            <input class="form-control" id="inputMystere" type="text" placeholder="Rentrez le code secret...">
-            <button style="display: none" id="myBtn" >Button</button>
-
-          </div>
-          <div class="col-md-2">
-          </div>
+            <div class="row w-100">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <a href="#" id="left"><img src="./assets/images/flèche-gauche.png"></a>
+                </div>
+                <div class="col-sm-3" style="text-align:right">
+                    <a href="#" id="right"><img src="./assets/images/flèche-droite.png"></a>
+                </div>
+            </div>
         </div>
-
-        <div class="row w-100" style="    align-items: center;
-">
-          <div class="col-sm-4">
-          </div>
-          <div class="col-sm-2"><input id="left" type="button" value="<-"></div>
-          <div class="col-sm-2" style="text-align:right"><input id="right" type="button" value="->"></div>
-        </div>
-      </div>
     </div>
-    <div class="container1" style="background-image: url('./assets/images/background.jpg');"></div>
-  </div>
+    <div class="container1" style="background-image: url('./assets/images/background-flou.png');">
+        <div style="height: 60vh;"></div>
+        <div class="row pack1">
+            <div class="col d-flex justify-content-center; text-align:left">
+                <img src="assets/images/merch.png">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <span style="color: #BF0101; font-size: 32px">PACK COLLECTOR CD + UN TRUC NON?</span>
+                </div>
+                <div class="row">
+                    <span style="color: white; font-size: 28px;margin-top: 10px">49.99 €</span>
+                </div>
+                <div class="row">
+                    <div style="width:100%;background-color: #535353; height: 1px;margin-top: 10px"></div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">1.Intro</div>
+                    <div class="col tracklist">8.Grave (ft. Pop Smoke)</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">2.Salle 104 (ft. K-out-R)</div>
+                    <div class="col tracklist">9.Nocture</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">3.Au jour le jour</div>
+                    <div class="col tracklist">10.Jabba</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">4.MyHess (ft. Maes)</div>
+                    <div class="col tracklist">11.King Schultz (ft. Django)</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">5.Maubeuge (ft. Garry)</div>
+                    <div class="col tracklist">12.Le monde est petit</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">6.Drill Sentimental</div>
+                    <div class="col tracklist">13.Outro</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">7.Tolstoï</div>
+                    <div class="col tracklist"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><input class="preco" type="button" value="PRÉ-COMMANDER"></div>
+                    <div class="col"></div>
+                </div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            </div>
+        </div>
+        <div style="height: 50vh;"></div>
+        <div class="row pack1">
+            <div class="col">
+                <div class="row">
+                    <span style="color: #BFA101; font-size: 32px">CD "EFFICHROME"</span>
+                </div>
+                <div class="row">
+                    <span style="color: white; font-size: 28px;margin-top: 10px">14.99 €</span>
+                </div>
+                <div class="row">
+                    <div style="width:100%;background-color: #535353; height: 1px;margin-top: 10px"></div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">1.Intro</div>
+                    <div class="col tracklist">8.Grave (ft. Pop Smoke)</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">2.Salle 104 (ft. K-out-R)</div>
+                    <div class="col tracklist">9.Nocture</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">3.Au jour le jour</div>
+                    <div class="col tracklist">10.Jabba</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">4.MyHess (ft. Maes)</div>
+                    <div class="col tracklist">11.King Schultz (ft. Django)</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">5.Maubeuge (ft. Garry)</div>
+                    <div class="col tracklist">12.Le monde est petit</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">6.Drill Sentimental</div>
+                    <div class="col tracklist">13.Outro</div>
+                </div>
+                <div class="row">
+                    <div class="col tracklist">7.Tolstoï</div>
+                    <div class="col tracklist"></div>
+                </div>
+                <div class="row" style="text-align:right">
+                    <div class="col"></div>
+                    <div class="col"><input class="preco2" type="button" value="PRÉ-COMMANDER"></div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center; text-align:left">
+                <div class="row" style="width: 100%;height:90%">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8">
+                        <img width="100%" style="margin-top:5%;margin-bottom:5%"
+                             src="assets/images/pochette-finale.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 20vh;"></div>
+        <div class="footer" style="background-image: url('./assets/images/footer.png');">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="row" style="margin-top: 10%">
+                        <div class="col-sm-5">A PROPOS</div>
+                        <div class="col-sm-5">NEWSLETTER</div>
+                    </div>
+                    <div class="row" style="margin-top: 2%">
+                        <div class="col-sm-5">Recherche</div>
+                        <div class="col-sm-5">Inscrivez-vous pour être alerté(e) en avant-première des exclusivités !
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 2%">
+                        <div class="col-sm-5">CGV</div>
+                        <div class="col-sm-5">Entrez votre email</div>
+                    </div>
+                    <div class="row" style="margin-top: 2%">
+                        <div class="col-sm-5">Mentions légales</div>
+                        <div class="col-sm-5"><input class="mail" type="text" placeholder="Entrez votre mail"></div>
+                    </div>
+                    <div class="row" style="margin-top: 2%">
+                        <div class="col-sm-5">Politique de confidentialité</div>
+                        <div class="col-sm-5"><input class="subscribe" type="button" value="S'INSCRIRE"></div>
+                    </div>
+                    <div class="row" style="margin-top: 2%">
+                        <div class="col-sm-5">Service client</div>
+                        <div class="col-sm-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 12vh">
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <lottie-player src="assets/images/data.json" background="transparent" speed="1"
+                               style="width: 300px; height: 300px;display: block; margin-left: auto; margin-right: auto"
+                               loop autoplay></lottie-player>
+
+
+                <div class="modalText">
+                    <h5>
+                        Félicitation, vous avez gagné !
+                    </h5>
+
+                    <p>
+                        Le masque collector, une version unique de l’album édition collector et un accès au backstage !
+                    </p>
+
+                    <input class="form-control" id="inputTelephone" type="text"
+                           placeholder="Saisissez votre numéro de téléphone...">
+
+                </div>
+            </div>
         </div>
-        <div class="modal-body" >
-          <lottie-player src="assets/images/data.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;display: block; margin-left: auto; margin-right: auto"  loop autoplay></lottie-player>
-
-
-          <div class="modalText">
-            <h5>
-              Félicitation, vous avez gagné !
-            </h5>
-
-            <p>
-              Le masque collector, une version unique de l’album édition collector et un accès au backstage !
-            </p>
-
-            <input class="form-control" id="inputTelephone" type="text" placeholder="Saisissez votre numéro de téléphone...">
-
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
 </body>
-
 
 </html>
