@@ -91,7 +91,32 @@ export class ThreeScene extends Scene{
                 }
             }
             loopEvent.add(rotate_left);
-        }); 
+        });
+
+        document.getElementById("inputMystere").addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("myBtn").click();
+            }
+        })
+
+        document.getElementById('myBtn').onclick = ( (e) => {
+            console.log()
+
+            if(document.getElementById("inputMystere").value.toLowerCase() == "10c" ){
+                $('#myModal').modal('show')
+                document.getElementById("inputMystere").className = "form-control"
+
+            }else{
+                document.getElementById("inputMystere").className = "form-control is-invalid"
+                document.getElementById("inputMystere").placeholder = "Mauvais code... Réessayer"
+            }
+
+
+        })
 
         this.initCamera(camera, domElement);
         this.initCameraAnimation(camera, loopEvent);

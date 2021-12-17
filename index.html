@@ -11,6 +11,8 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 
 
@@ -52,10 +54,30 @@
   </nav>
   <div>
     <div id="native"></div>
+
     <div id="three">
+      </div>
+
+
       <div class="fleches d-flex justify-content-center">
-        <div class="row w-100">
-          <div class="col-sm-4"></div>
+        <div class="mysteryText row w-100";>
+
+          <div class="col-md-5">
+
+          </div>
+          <div class="col-md-2" style="text-align: center">
+            <input class="form-control" id="inputMystere" type="text" placeholder="Rentrez le code secret...">
+            <button style="display: none" id="myBtn" >Button</button>
+
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+
+        <div class="row w-100" style="    align-items: center;
+">
+          <div class="col-sm-4">
+          </div>
           <div class="col-sm-2"><input id="left" type="button" value="<-"></div>
           <div class="col-sm-2" style="text-align:right"><input id="right" type="button" value="->"></div>
         </div>
@@ -63,6 +85,38 @@
     </div>
     <div class="container1" style="background-image: url('./assets/images/background.jpg');"></div>
   </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+          <lottie-player src="assets/images/data.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;display: block; margin-left: auto; margin-right: auto"  loop autoplay></lottie-player>
+
+
+          <div class="modalText">
+            <h5>
+              Félicitation, vous avez gagné !
+            </h5>
+
+            <p>
+              Le masque collector, une version unique de l’album édition collector et un accès au backstage !
+            </p>
+
+            <input class="form-control" id="inputTelephone" type="text" placeholder="Saisissez votre numéro de téléphone...">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </body>
+
 
 </html>

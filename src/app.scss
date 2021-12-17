@@ -1,3 +1,9 @@
+@mixin google-font($family) {
+    @import url("http://fonts.googleapis.com/css?family=#{$family}");
+}
+
+@include google-font("Nunito");
+
 body{
     margin: 0;
 }
@@ -23,7 +29,6 @@ body{
 .fleches{
     position: absolute;
     margin: 0 auto;
-    align-items: center;
     background: radial-gradient(130.06% 68.17% at 50% 28.78%, rgba(0, 0, 0, 0) 0%, #000000 100%);
     top: 0;
     left: 0;
@@ -31,9 +36,88 @@ body{
     bottom: 0;
 }
 
+.mysteryText{
+    position: absolute;
+    height: 65%;
+    width: 100%;
+    //margin: 0 auto;
+    align-items: center;
+
+}
+
+.is-invalid::placeholder{
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.modalText h5{
+    font-family: 'Nunito' ;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+.modalText p{
+    font-family: 'Nunito';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+#inputTelephone{
+    border: 0.5px solid #33373B;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+#inputMystere{
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+#inputTelephone::placeholder {
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.modal-dialog{
+    max-width: 650px;
+}
+
+
+
+
 .container1{
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    background-size: cover;
+width: 100vw;
+height: 100vh;
+max-width: 100%;
+background-size: cover;
 }
