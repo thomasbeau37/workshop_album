@@ -46,7 +46,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: `${bundleName}.css`
-    }),
+    }),k
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets' ,
